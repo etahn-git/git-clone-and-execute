@@ -27,7 +27,11 @@ if(CTRBSC.length==0){ // checks if should run the commandToRunBeforeStarting fun
     }
 
 function commandToRunBeforeStarting() { // this function runs before the cloned git repo program is started
-    process.chdir('./src'); // sets directory to ./src
+    var dir = './src';
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+    }
+    process.chdir('./src', false); // sets directory to ./src
     console.log("\x1b[34m", 'Running the commands: ' + CTRBSC + '', '\x1b[0m')
     subProcess.exec(CTRBSC, (err, stdout, stderr) => { // runs the 'CommandsToRunBeforeStartCommand' from config.json
         if (err) {

@@ -23,7 +23,10 @@ function startcmd() { // this function starts the program cloned from the git re
       }
     subProcess.exec(startcommand, (err, stdout, stderr) => { // runs the start command from config.json
       if (err) {
-        console.log("\x1b[31m", 'Error, "' + startcommand + '" is not a invalid command OR your github url is invalid. Please run "git-clone-and-execute config" and change your settings.', '\x1b[0m')
+        console.log(err)
+        console.log(' ')
+        console.log("\x1b[31m", 'Your error was printed above. Here are some possible issues: \x1b[0m')
+        console.log("\x1b[31m", 'Error, here are the possible issues: \x1b[0m \n \t-"' + startcommand + '" is not a valid command.\n \t-Error in your script.\n \t-Missing modules(to install modules add the install commands to the "CommandsToRunBeforeStartCommand" in the config.)\n \t-Your github url is invalid.\n \x1b[31m!!! Run "git-clone-and-execute config" to change your settings. !!!', '\x1b[0m')
         process.exit(1)
       } 
       else {
