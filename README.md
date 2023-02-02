@@ -10,8 +10,15 @@ This program clones a github repository of your choice(public repos only for now
 
 
 ## How to use? - docker 
+Project on docker.com can be found [here](https://hub.docker.com/r/etahn/git-clone-and-execute "here")
+- Clone the docker image with this command: `docker pull etahn/git-clone-and-execute`
+- Run the command, `docker run -p <port>:<port> -it etahn/git-clone-and-execute /bin/bash -c "cd git-clone-and-execute && node git-clone-and-execute; /bin/bash"` and replace `<port>` with the port you want to use for your project, if not needed remove `<port>:<port>` 
+- You will not be in the dockers bash, you should see a prompt saying `Please run "git-clone-and-execute start" or "git-clone-and-execute config"`
+- Next run `node git-clone-and-execute config`, and follow this [wiki](https://github.com/etahn-git/git-clone-and-execute/wiki/config "wiki") to config it properly
+- After that install any depencies your project needs (this is a ubuntu linux console)
+- Then you can run `node git-clone-and-execute start`
+- And you are done!
 
--Coming soon
 
 <br>
 
