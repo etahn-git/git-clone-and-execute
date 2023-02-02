@@ -5,6 +5,8 @@
 
 ## Quick run threw on what it does:
 This program clones a github repository of your choice(public repos only for now).  Then after its cloned with the set start command in the `config.json` it will run the command that starts your program. `Example: node index.js`
+- Downsides: any output from the files you run in the program will not be printed to console.
+
 ##### [Heres an example of this program in use](http://github.com/etahn-git "Heres an example of this program in use")
 
 
